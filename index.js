@@ -44,7 +44,7 @@ RateLimit.check = function(key, windowInSeconds, limit, callback) {
             if(results.cardinality < limit)
             {
                 redisClient.zadd(key, now, now, function(err) {
-                    return callback(null, false)
+                    return callback(null, false);
                 });
             }
             else
